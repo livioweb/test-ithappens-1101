@@ -50,4 +50,17 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function(){
             'delete' => 'categories.destroy',
         ]
     ]);
+
+    Route::resource('users', 'UsersController',[
+        'names' => [
+            'index' =>  'users',
+            'store' =>  'users.store',
+            'create' => 'users.create',
+            'show' =>   'users.show',
+            'edit' =>   'users.edit',
+            'update' => 'users.update',
+            'delete' => 'users.destroy',
+        ]
+    ]);
+
 });

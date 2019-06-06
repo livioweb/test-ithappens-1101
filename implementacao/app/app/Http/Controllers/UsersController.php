@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categorie;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class CategoriesController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Categorie::paginate(15);
-        return view('categories.index')
-            ->with('categories',$categories);
+        $users = User::paginate(15);
+        return view('users.index')
+            ->with('users',$users);
     }
 
     /**
@@ -27,8 +27,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
-
+        return view('users.create');
     }
 
     /**
@@ -39,15 +38,18 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $categorie = new Categorie();
-        $categorie->name = $request->name;
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->avatar = $request->avatar;
+        $user->super_admin = $request->super_admin;
+        $user->password = $request->password;
 
-            if($categorie->save()){
-                Session::put('success', 'Categoria criado com sucesso!');
-                return redirect('/admin/categories');
-            }
-        Session::put('danger', 'Algum erro ocorreu');
-
+        if($user->save()){
+            Session::put('success','Usuario criado com sucesso');
+            return redirect('/admin/users');
+        }
+        Session::put('danger','Algum erro ocorreu');
         dd($request->all());
     }
 
@@ -59,11 +61,9 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //dd($id);
-        $categorie = Categorie::findOrFail($id);
-        return view('categories.show')
-            ->with('categorie',$categorie);
-        // dd($customer);
+        $user = User::findOrfail($id);
+        return view('users.show')
+            ->with('user',$user);
     }
 
     /**
@@ -74,10 +74,9 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //dd($id);
-        $categorie = Categorie::findOrFail($id);
-        return view('categories.update')
-            ->with('categories',$categorie);
+        $user = User::findOrFail($id);
+        return view('users.update')
+            ->with('user',$user);
     }
 
     /**
@@ -101,6 +100,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
+        dd($id);
 
     }
 }

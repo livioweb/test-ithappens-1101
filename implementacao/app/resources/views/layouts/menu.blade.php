@@ -9,7 +9,7 @@
     </li>
 
     <li class="has-sub">
-        <a href="{{ route('home') }}">
+        <a href="{{ route('users') }}">
             <b class="caret"></b>
             <i class="fa fa-th-large"></i>
             <span>Usuarios</span>
