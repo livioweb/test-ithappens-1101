@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SICONV - login</title>
+    <title>ItHappens - login</title>
 
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
@@ -34,8 +34,8 @@
         <!-- begin brand -->
         <div class="login-header">
             <div class="brand">
-                <span class="logo"></span> <b>Siconv </b> APP -
-                <small>Siconv Consult App</small>
+                <span class="logo"></span> <b>ItHappens </b> APP -
+                <small>ItHappens Manager App</small>
             </div>
             <div class="icon">
                 <i class="fa fa-lock"></i>
