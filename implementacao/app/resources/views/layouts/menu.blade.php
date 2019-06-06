@@ -45,6 +45,13 @@
         </a>
     </li>
     <li class="has-sub">
+        <a href="{{ route('stores') }}">
+            <b class="caret"></b>
+            <i class="fa fa-th-large"></i>
+            <span>Loja/Filial</span>
+        </a>
+    </li>
+    <li class="has-sub">
         <a href="{{ route('home') }}">
             <b class="caret"></b>
             <i class="fa fa-th-large"></i>

@@ -74,4 +74,17 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function(){
             'delete' => 'products.destroy',
         ]
     ]);
+
+    Route::resource('stores', 'StoresController',[
+        'names' => [
+            'index' =>  'stores',
+            'store' =>  'stores.store',
+            'create' => 'stores.create',
+            'show' =>   'stores.show',
+            'edit' =>   'stores.edit',
+            'update' => 'stores.update',
+            'delete' => 'stores.destroy',
+        ]
+    ]);
+
 });

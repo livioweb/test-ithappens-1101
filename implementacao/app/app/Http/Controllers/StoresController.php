@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categorie;
+use App\Models\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class CategoriesController extends Controller
+class StoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Categorie::paginate(15);
-        return view('categories.index')
-            ->with('categories',$categories);
+        $stores = Store::paginate(15);
+        return view('stores.index')
+            ->with('stores',$stores);
     }
 
     /**
@@ -27,8 +27,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
-
+        return view('stores.create');
     }
 
     /**
@@ -39,13 +38,14 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $categorie = new Categorie();
-        $categorie->name = $request->name;
+        $store = new Store();
+        $store->name = $request->name;
+        $store->site = $request->site;
 
-            if($categorie->save()){
-                Session::put('success', 'Categoria criado com sucesso!');
-                return redirect('/admin/categories');
-            }
+        if($store->save()){
+            Session::put('success', 'Filial criado com sucesso!');
+            return redirect('/admin/stores');
+        }
         Session::put('danger', 'Algum erro ocorreu');
 
         dd($request->all());
@@ -59,11 +59,8 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //dd($id);
-        $categorie = Categorie::findOrFail($id);
-        return view('categories.show')
-            ->with('categorie',$categorie);
-        // dd($customer);
+        $store = Store::findOrFail($id);
+        return view('stores.show')->with('store',$store);
     }
 
     /**
@@ -75,9 +72,9 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         //dd($id);
-        $categorie = Categorie::findOrFail($id);
-        return view('categories.update')
-            ->with('categorie',$categorie);
+        $store = Store::findOrFail($id);
+        return view('stores.update')
+            ->with('store',$store);
     }
 
     /**
@@ -101,6 +98,6 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-
+        dd($id);
     }
 }
