@@ -38,7 +38,7 @@
         </a>
     </li>
     <li class="has-sub">
-        <a href="{{ route('home') }}">
+        <a href="{{ route('products') }}">
             <b class="caret"></b>
             <i class="fa fa-th-large"></i>
             <span>Produtos</span>

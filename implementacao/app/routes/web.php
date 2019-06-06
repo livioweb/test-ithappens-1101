@@ -63,4 +63,15 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function(){
         ]
     ]);
 
+    Route::resource('products', 'ProductsController',[
+        'names' => [
+            'index' =>  'products',
+            'store' =>  'products.store',
+            'create' => 'products.create',
+            'show' =>   'products.show',
+            'edit' =>   'products.edit',
+            'update' => 'products.update',
+            'delete' => 'products.destroy',
+        ]
+    ]);
 });
