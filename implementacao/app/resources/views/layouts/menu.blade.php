@@ -31,6 +31,13 @@
         </a>
     </li>
     <li class="has-sub">
+        <a href="{{ route('categories') }}">
+            <b class="caret"></b>
+            <i class="fa fa-th-large"></i>
+            <span>Categorias</span>
+        </a>
+    </li>
+    <li class="has-sub">
         <a href="{{ route('home') }}">
             <b class="caret"></b>
             <i class="fa fa-th-large"></i>

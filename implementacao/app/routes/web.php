@@ -36,8 +36,18 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function(){
             'edit' =>   'customers.edit',
             'update' => 'customers.update',
             'delete' => 'customers.destroy',
-            // etc...
         ]
     ]);
 
+    Route::resource('categories', 'CategoriesController',[
+        'names' => [
+            'index' =>  'categories',
+            'store' =>  'categories.store',
+            'create' => 'categories.create',
+            'show' =>   'categories.show',
+            'edit' =>   'categories.edit',
+            'update' => 'categories.update',
+            'delete' => 'categories.destroy',
+        ]
+    ]);
 });
