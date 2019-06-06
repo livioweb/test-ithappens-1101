@@ -6,7 +6,7 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8"/>
-    <title>Siconv Consult</title>
+    <title>ItHappens</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
     <meta content="ItHappens" name="Gestor Inteligente de Produtos"/>
     <meta content="Livio Rodrigues Lopes" name="author"/>

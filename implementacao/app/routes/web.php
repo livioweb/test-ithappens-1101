@@ -19,36 +19,25 @@ Route::get('/', 'SiteController@index');
 
 Route::get('/admin/login', 'Auth\LoginController@showLoginForm')->name("admin/login");
 Route::get('/login', 'Auth\LoginController@showLoginForm');
-
 Route::post('/admin/login', 'Auth\LoginController@login');
 
-
-
 Auth::routes();
-
-
 
 Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function(){
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('/numero_processo', 'LedgerBookController@numeroProcesso')->name('/admin/numero_processo');
-
-    Route::resource('ledgerbooks', 'LedgerBookController',[
+    Route::resource('customers', 'CustomersController',[
         'names' => [
-            'index' => 'ledgerbooks',
-            'store' => 'ledgerbooks.store',
-            'create' => 'ledgerbooks.create',
-            'show' => 'ledgerbooks.show',
-            'edit' => 'ledgerbooks.edit',
+            'index' =>  'customers',
+            'store' =>  'customers.store',
+            'create' => 'customers.create',
+            'show' =>   'customers.show',
+            'edit' =>   'customers.edit',
+            'update' => 'customers.update',
+            'delete' => 'customers.destroy',
             // etc...
         ]
     ]);
 
 });
-
-Route::get('export', 'MyController@export')->name('export');
-
-Route::get('importExportView', 'MyController@importExportView');
-
-Route::post('import', 'MyController@import')->name('import');
