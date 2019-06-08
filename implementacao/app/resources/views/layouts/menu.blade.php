@@ -17,7 +17,7 @@
     </li>
 
     <li class="has-sub">
-        <a href="{{ route('home') }}">
+        <a href="{{ route('stocks') }}">
             <b class="caret"></b>
             <i class="fa fa-th-large"></i>
             <span>Estoque</span>
@@ -52,7 +52,7 @@
         </a>
     </li>
     <li class="has-sub">
-        <a href="{{ route('home') }}">
+        <a href="{{ route('orders') }}">
             <b class="caret"></b>
             <i class="fa fa-th-large"></i>
             <span>Pedidos</span>

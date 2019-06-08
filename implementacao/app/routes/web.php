@@ -87,4 +87,27 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function(){
         ]
     ]);
 
+    Route::resource('stocks', 'StocksController',[
+        'names' => [
+            'index' =>  'stocks',
+            'store' =>  'stocks.store',
+            'create' => 'stocks.create',
+            'show' =>   'stocks.show',
+            'edit' =>   'stocks.edit',
+            'update' => 'stocks.update',
+            'delete' => 'stocks.destroy',
+        ]
+    ]);
+
+    Route::resource('orders', 'OrdersController',[
+        'names' => [
+            'index' =>  'orders',
+            'store' =>  'orders.store',
+            'create' => 'orders.create',
+            'show' =>   'orders.show',
+            'edit' =>   'orders.edit',
+            'update' => 'orders.update',
+            'delete' => 'orders.destroy',
+        ]
+    ]);
 });

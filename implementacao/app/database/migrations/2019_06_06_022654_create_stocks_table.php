@@ -17,6 +17,8 @@ class CreateStocksTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('amount');
+            $table->integer('unit_amount');
+            $table->integer('payment_amount');
 
             $table->bigInteger('categorie_id')->unsigned();
             $table->foreign('categorie_id')

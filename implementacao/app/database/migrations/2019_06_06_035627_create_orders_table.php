@@ -32,6 +32,12 @@ class CreateOrdersTable extends Migration
                 ->references('id')->on('customers')
                 ->onDelete('cascade');
 
+            $table->bigInteger('payment_methods_id')->unsigned();
+            $table->foreign('payment_methods_id')
+                ->references('id')->on('payment_methods')
+                ->onDelete('cascade');
+
+
             $table->timestamps();
         });
     }
